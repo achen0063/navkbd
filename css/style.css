@@ -1,1 +1,36 @@
- h1{color: red;}
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+kbd{
+    border: 1px solid red;
+    display: inline-block;
+    width: 4em;
+    height: 4em;
+    text-transform: uppercase;
+    position: relative;
+}
+.box>div:nth-child(2){
+    margin-left: 2em;
+}
+.box>div:last-child{
+    margin-left: 4em;
+}
+.box{
+    display: inline-block;
+}
+main{
+    text-align: center;
+}
+kbd>button{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: none;
+}
+kbd:hover>button {
+    display: inline-block;
+}
