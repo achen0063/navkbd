@@ -43,9 +43,9 @@
     }
     index=0
     while(index<keys['length']){//第一步 三组数组轮一遍
-
-        div = document.createElement('div')
-                                            // 创建一个标签    标签名字   建立个数组
+        
+        div = document.createElement('div')     // 创建一个标签    标签名字   建立个数组
+        div.className = 'row'
         main.appendChild(div)                   //把数组加入main函数
         kbd = document.createElement('kbd')     //数组里建立一个元素
         row = keys[index]
@@ -53,17 +53,24 @@
         num = 0
         while(num<row['length']){               // 第一个是 keys[0]row['length']
             kbd = document.createElement('kbd')     
-            kbd.textContent = row[num]          //num取值0.1.2.3.4.5.6.7.8.9
+            span = document.createElement('span')
+            span.textContent = row[num]          //num取值0.1.2.3.4.5.6.7.8.9
+            span.className = 'text'
             buttonX = document.createElement('button')
             buttonX.textContent = '编辑'
+            kbd.className = 'A'
             buttonX.id = row[num]
+            img = document.createElement('img')
+            img.src = 'http://'+hash[row[num]]+"/favicon.ico"
             buttonX.onclick = function(asd){
                                                 //console.log(buttonX)//只能打出最后一个buttonx，
                 key = asd.target.id          //所有只能用这个，target用户点的东西
                 x = prompt('给我一个网址')
                 hash[key] = x
                 localStorage.setItem('xxx',JSON.stringify(hash))
-            }   
+            }
+            kbd.appendChild(span)
+            kbd.appendChild(img)   
             kbd.appendChild(buttonX)
             div.appendChild(kbd)            
             num = num + 1
